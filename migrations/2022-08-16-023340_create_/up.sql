@@ -1,7 +1,12 @@
 -- Your SQL goes here
 
-CREATE TABLE posts
+CREATE TABLE `posts`
 (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    body TEXT
+    `id` INT PRIMARY KEY AUTO_INCREMENT,
+    `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    `deleted_at` DATETIME DEFAULT NULL,
+    `title` VARCHAR(255),
+    `description` VARCHAR(255),
+    `body` TEXT
 );
